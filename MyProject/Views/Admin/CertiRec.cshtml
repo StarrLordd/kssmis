@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "CertiRec";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@using MyProject.Models
+@using System.Data
+<h2 style="text-align:center;">Trainig Certificate Record</h2>
+<center><table border="1" cellpadding="10px">
+    <tr>
+        <th>Sr. No.</th>
+        <th>Enrollment No.</th>
+        <th>Name</th>
+        <th>Training Name</th>
+        <th>College Name</th>
+        <th>Join Date</th>
+        <th>Over Date</th>
+        <th>Duration</th>
+        <th>Grade</th>
+        <th>Remark</th>
+        <th>Issued On</th>
+
+    </tr>
+    @{
+        DBManager Dm = new DBManager();
+        string cmd = "select c.CirtiId, c.EnrollMo, c.name, t.TrngName, col.ClgName, c.FromDT, c.ToDT, c.Duration, c.Grade, c.Remark, c.IssueDT from Tbl_Cirtificate c, Tbl_AddCllg col, Tbl_AddTraining t where c.TrngId=t.TrngId and c.CollegeId=col.ClgId;";
+        int x = 1;
+        DataTable dt = Dm.ExecuteSelect(cmd);
+        foreach(DataRow dr in dt.Rows)
+        {
+            <tr>
+                <td>@x</td>
+                @for(int i=1;i<11;i++)
+                {
+                    <td>@dr[i]</td>
+                }
+            </tr>
+            x++;
+        }    
+     }
+</table>
+    </center>

@@ -1,0 +1,161 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MZCommonLayout</title>
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="~/Content/NewBoot/css/ManagerStyle.css" rel="stylesheet" />
+    <link href="~/Content/css/hover-min.css" rel="stylesheet" />
+    <link href="~/Content/css/hover.css" rel="stylesheet" />
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="~/Content/NewBoot/js/jquery-3.4.1.min.js"></script>
+    <style>
+        .men {
+            color: white;
+            font-size:18px;
+        }
+            .men:hover {
+                color: white;
+                display: block;
+                background:#007bff;
+            }
+    </style>
+</head>
+<body>
+    
+<div class="col-sm-12">
+    <div class="row">
+        <div class="col-sm-4"  style="background-color:#191919;min-height:40px;">
+             <span class="cc fa fa-envelope"></span> <span style="font-size:16px;color:#8e8e8e;">Amittripathi2233@gmail.com</span>
+           <span class="cc fa fa-mobile" style="font-size:20px;"></span> <span style="font-size:16px;color:#8e8e8e;">+91-8887975604</span>
+        </div>
+        <div class="col-sm-3"  style="background-color:#191919;min-height:40px;"></div>
+        <div class="col-sm-5"  style="background-color:#191919;min-height:40px;"></div>
+    </div>
+</div>
+
+    <div class="col-sm-12">
+        <div class="row">
+           <nav class="navbar navbar-expand-lg" style="width:100%;background:#6451ce;" >
+  <button class="navbar-toggler" style="color:white;font-weight:bold;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span  class="fa fa-bars navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link men" href="Welcome">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link men" href="DevelopmentIncome">Software Development Income</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link men" href="DevelopmentExpence">Software Development Expense</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link men" href="TraneeRegi">Trainee Registration</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link men" href="College">Add College</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link men" href="TraineePro">Trainees Profile</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link men" href="PettyEx">Petty Expense</a>
+      </li>
+      <li class="nav-item dropdown"  style="float:right">
+        <a class="nav-link dropdown-toggle men" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Setting
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background:#6451ce;">
+            <a class="dropdown-item men" href="Logout">Logout</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item men" href="ChengePassword">Change Password</a>
+        </div>
+      </li>
+    </ul>
+   
+  </div>
+</nav>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <!------Foooter-------->
+
+     <div class="col-sm-12 ufooter">
+         <div class="row">
+                <div class="col-sm-5">
+                    <span class="sp">Get connected with us on social networks!</span>
+                </div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-3 ss">
+                   <a href="https://www.facebook.com/Amit.roqs" target="_blank"> <span class="sp1 fa fa-facebook"></span></a>
+                    <span class="sp1 fa fa-twitter"></span>
+                    <span class="sp1 fa fa-google-plus"></span>
+                    <span class="sp1 fa fa-linkedin "></span>
+                    <span class="sp1 fa fa-instagram"></span>
+                </div>
+            </div>
+         </div>
+            <div class="col-sm-12 mfoot">
+                <div class="row">
+                <div class="col-sm-3 foot">
+                    <br />
+                    <span style="font-weight:bold;font-size:20px;">KSS (P) Ltd.</span>
+                    <hr style="width: 60px;margin-left:0px;margin-top:0px;border-color:#6451ce;">
+                    <br />
+                    <p style="font-size:17px" class="text-justify">KSS (Kamadgiri Software Solutions) is a next-generation global technology company that helps enterprises reimagine their businesses for the digital age</p>
+
+                </div>
+                <div class="col-sm-3 foot">
+                     <br />
+                    <span style="font-weight:bold;font-size:20px;">PROJECTS</span>
+                    <hr style="width: 60px;margin-left:0px;margin-top:0px;border-color:#6451ce;">
+                    <br />
+                    <p  style="font-size:16px">SADGURU NETRA CHIKITSALAYA</p>
+                     <p  style="font-size:16px">ONLINE EXAMINATION</p>
+                     <p  style="font-size:16px">UINVERSAL COMPUTER INSTITUTE</p>
+                     <p  style="font-size:16px">HOME TUTER </p>
+                </div>
+                <div class="col-sm-3 foot">
+                     <br />
+                    <span style="font-weight:bold;font-size:20px;">USEFULL &nbsp; LINKS</span>
+                    <hr style="width: 60px;margin-left:0px;margin-top:0px;border-color:#6451ce;">
+                    <br />
+                    <p  style="font-size:16px"><a style="text-decoration:none;color:#d2d2d2;" href="http://mykss.in/">KSS - Official Website</a></p>
+                    <p  style="font-size:16px"><a style="text-decoration:none;color:#d2d2d2;" href="http://mykss.in/KSS/Register">REGISTRATION</a></p>
+                    <p style="font-size:17px"><a style="text-decoration:none;color:#d2d2d2;" href="http://mykss.in/KSS/Career">Career at KSS</a></p>
+                     <p  style="font-size:16px"><a style="text-decoration:none;color:#d2d2d2;" href="http://bteup.ac.in/webapp/default.aspx">BTEUP</a></p>
+                     
+                </div>
+                <div class="col-sm-3 foot">
+                     <br />
+                    <span style="font-weight:bold;font-size:20px;">KSS (P) Ltd.</span>
+                    <hr style="width: 60px;margin-left:0px;margin-top:0px;border-color:#6451ce;">
+                    <br />
+                    <p style="font-size:16px" class="text-justify">Kamadgiri Software Solutions<br />
+                       In front of Rain Basera<br />
+                        Near Tourist Bungalow, Sitapur <br />
+                        Chitrakoot (UP)- 210204<br />
+                        Phone: +917651964476, +919713161487<br />
+                        Email: hr@mykss.in</p>
+
+                </div>
+            </div>
+                </div>
+            <div class="col-sm-12 lfoot">
+                <p style="color:#ababab;line-height:50px;font-size:16px;" class="text-center">Copyright &copy; All Right Reserved</p>
+            </div>
+</body>
+</html>

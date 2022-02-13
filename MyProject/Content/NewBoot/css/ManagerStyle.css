@@ -1,0 +1,24 @@
+﻿.ufooter {
+    background-color: #6451ce;
+    min-height: 60px;
+}.sp {
+    line-height: 60px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}.ss {
+    line-height: 60px;
+    font-size: 20px;
+}.sp1 {
+    text-align: center;
+    color: white;
+    margin-left:10%;  
+}.mfoot {
+    min-height: 250px;
+    background-color: #1c2331;
+}.foot {
+    color: #d2d2d2;
+}.lfoot {
+    min-height: 50px;
+    background: #161c27;
+}

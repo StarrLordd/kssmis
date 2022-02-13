@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "TraneeRegi";
+    Layout = "~/Views/Shared/MZCommonLayout.cshtml";
+}
+@using MyProject.Models;
+@using System.Data;
+<p style="font-size:25px;text-align:center;font-weight:bold;">Trainee Registration</p>
+
+@using (Html.BeginForm("TraneeRegi", "Manager", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.TextBox("name", null, new { placeholder="Enter Student Name"})<br />
+    @Html.TextBox("fname", null, new { placeholder="Enter Student Father Name"})<br />
+    @Html.RadioButton("gen", "Male", new { }) <span>Male</span>
+    @Html.RadioButton("gen", "Female", new { }) <span>Female</span><br />
+    @Html.TextBox("tpic", null, new { type="file"})
+    <select name="clg">
+        <option value="null">--Please Select--</option>
+        @{
+            string cmd = "select ClgId,ClgName from Tbl_AddCllg";
+            DBManager Dm = new DBManager();
+            DataTable b = Dm.ExecuteSelect(cmd);
+            foreach(DataRow dr in b.Rows)
+            {
+                <option value="@dr[0]">@dr[1]</option>
+            }
+         }
+    </select>
+   // @Html.DropDownList("ddc",null, new { })
+   <select name="cource">
+       <option value="null">--Select Course--</option>
+       <option>Deplooma</option>
+       <option>BCA</option>
+       <option>B. Tech.</option>
+       <option>B. Sc.</option>
+       <option>MCA</option>
+       <option>M. Tech.</option>
+   </select><br />
+    <select name="year">
+        <option value="null">--Select Year--</option>
+        <option>1<sup>st</sup> Year</option>
+        <option>2<sup>nd</sup> Year</option>
+        <option>3<sup>rd</sup> Year</option>
+        <option>4<sup>th</sup> Year</option>
+    </select><br />
+    @Html.TextBox("email", null, new { placeholder="Enter Student Email"})<br />
+    @Html.TextBox("mob", null, new { placeholder="Enter Student Contact Number"})<br />
+     <select name="tname">
+        <option value="null">--Please Select--</option>
+        @{
+            cmd = "select TrngId,TrngName,Year from tbl_Addtraining order by trngname";
+            Dm = new DBManager();
+            b = Dm.ExecuteSelect(cmd);
+            foreach(DataRow dr in b.Rows)
+            {
+                <option value="@dr[0]">@dr[1] - @dr[2]</option>
+            }
+         }
+    </select>
+    @Html.TextBox("rfees", null, new { placeholder="Registration Fees"})<br />
+    @Html.TextBox("tfees", null, new { placeholder="Total Fees"})<br />
+    @Html.TextBox("dt", null, new { type="date"})<br />
+    @Html.TextBox("promo", null, new { placeholder="Enter PromoCode"})<br />
+    @Html.TextArea("rem", null, new { placeholder="Enter Remark"})<br />
+    <input type="submit" value="Submit" />
+
+}
+<span style="color:green;font-size:20px">@ViewBag.res</span>

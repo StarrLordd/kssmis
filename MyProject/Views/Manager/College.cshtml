@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "College";
+    Layout = "~/Views/Shared/MZCommonLayout.cshtml";
+}
+
+<p style="font-weight:bolder;font-size:25px;text-align:center;">ADD COLLEGE HERE...</p>
+@using (Html.BeginForm("Colllege")) { 
+    @Html.TextBox("clg", null, new { placeholder="Enter College NAme"})<br />
+    @Html.TextBox("dist", null, new { placeholder="Enter Distric Name "})<br />
+    <input type="submit" value="Submit" />
+}
+<p style="color:green;font-weight:bold;font-size:20px;">@ViewBag.res</p>

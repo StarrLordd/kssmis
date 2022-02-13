@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Logout</title>
+    <script>
+        function keepMeLogOut() {
+            window.history.forward();
+            window.setTimeout("window.location.href='../Public/LogIn'", 500);
+        }
+    </script>
+</head>
+<body onload="keepMeLogOut()">
+    <div>
+        
+    </div>
+</body>
+</html>

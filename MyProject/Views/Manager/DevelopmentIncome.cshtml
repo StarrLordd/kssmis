@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "DevelopmentIncome";
+    Layout = "~/Views/Shared/MZCommonLayout.cshtml";
+}
+
+<h2>DevelopmentIncome</h2>
+<div class="cool-sm-12">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" style="box-shadow:2px 2px 10px black;min-height:400px;padding:2%;">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    @using (Html.BeginForm("DevelopmentIncome"))
+{
+    @Html.TextBox("sname", null, new { placeholder="Enter Software Name"})<br />
+    @Html.TextBox("Cname", null, new { placeholder="Enter Client NAme"})<br />
+    <select name="stype">
+        <option value="null">--Software Type--</option>
+        <option>Console Application</option>
+        <option>Androide Application</option>
+        <option>IOS Application</option>
+        <option>Web Application</option>
+        <option>Windows Application</option>
+    </select><br />
+    @Html.TextBox("tcost", null, new { placeholder="Ennter Total Coast"})<br />
+    @Html.TextBox("ramount", null, new { placeholder="Enter Recieved Amount"})<br />
+    @Html.TextArea("rem", null, new { placeholder="Enter Remark"})<br /><br />
+    <input type="submit" value="Submit" />
+    <span style="color:red;">@ViewBag.msg</span>
+}
+
+                </div>
+                <div class="col-sm-1"></div>
+               
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Logout</title>
+</head>
+<body onload="log()">
+    <div>
+        <script>
+            function log() {
+                window.history.forward();
+                window.setTimeout("window.location.href='/'", 500);
+            }
+        </script>
+    </div>
+</body>
+</html>

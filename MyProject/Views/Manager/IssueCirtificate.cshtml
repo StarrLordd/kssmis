@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "IssueCirtificate";
+    Layout = "~/Views/Shared/MZCommonLayout.cshtml";
+}
+@using MyProject.Models
+@using System.Data
+<h2>IssueCirtificate</h2>
+@using (Html.BeginForm("IssueCirtificate"))
+{
+    @Html.TextBox("EnrollNo", null, new { placeholder="Enter ENorollMent Number"})<br />
+    @Html.TextBox("name", null, new { placeholder="Enter Student Name"})<br />
+   <select name="tname">
+        <option value="null">--Please Select--</option>
+        @{
+            String cmd = "select TrngId,TrngName,Year from tbl_Addtraining order by trngname";
+            DBManager Dm = new DBManager();
+            DataTable b = Dm.ExecuteSelect(cmd);
+            foreach(DataRow dr in b.Rows)
+            {
+                <option value="@dr[0]">@dr[1] - @dr[2]</option>
+            }
+         }
+    </select>
+    <span>Select College</span>
+    <select name="clg">
+        <option value="null">--Please Select--</option>
+        @{
+            cmd = "select ClgId,ClgName from Tbl_AddCllg";
+            Dm = new DBManager();
+            b = Dm.ExecuteSelect(cmd);
+            foreach(DataRow dr in b.Rows)
+            {
+                <option value="@dr[0]">@dr[1]</option>
+            }
+         }
+        </select>
+    @Html.TextBox("fromdt", null, new { type="date"})<br />
+    @Html.TextBox("todt", null, new { type="date"})<br />
+    <span>Duration</span><br />
+    <select name="duration">
+        <option value="null">--Please Select--</option>
+        <option>45 Days</option>
+        <option>60 Days</option>
+        <option>4/6 Weeks</option>
+        <option>6/7 Months</option>
+    </select><br />
+    <span>Grade : </span><br />
+    <select name="grd">
+        <option value="null">--Please Select</option>
+        <option>A++</option>
+        <option>A+</option>
+        <option>B+</option>
+        <option>c</option>
+        <option>D</option>
+    </select><br />
+    @Html.TextArea("rem", null, new { placeholder="Enter Remark"})<br /><br />
+    <input type="submit" value="Submit" /> <input type="Reset" value="Reset" />
+    <span style="color:red">@ViewBag.msg</span>
+}

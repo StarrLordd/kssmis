@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "SendSMS";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row" style="min-height:300px">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6" style="margin-top:100px;background-color:#41e9a0">
+        <h1 class="text-center">SEND SMS HERE..</h1>
+        @using(Html.BeginForm("SendSMS"))
+        {
+            @Html.TextBox("num",null,new{placeholder="Enter Mobile Number",id="mb", type="number", @class="form-control"})<br />
+            @Html.TextArea("msg",null,new{Placeholder="Enter Message Here...", @class="form-control", rows="4"})<br />
+            <input type="submit" value="Send SMS" />
+        }
+        
+    </div>
+    <span style="color:green">@ViewBag.msg</span>
+    <div class="col-sm-3"></div>
+</div>
+<script>
+    var x = window.location.href.substring(window.location.href.indexOf('=') + 1);
+    if (x.length > 9) {
+        document.getElementById("mb").value = x;
+    }
+</script>

@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "FeeDetails";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@using MyProject.Models
+@using System.Data
+
+<h2 style="text-align:center;">FeeDetails</h2>
+<table border="1" cellpadding="10px">
+    <tr>
+        <th>Sr. No.</th>
+        <th>Enrollment No.</th>
+        <th>Name</th>
+        <th>College Name</th>
+        <th>Training</th>
+        <th>Submitted Amount</th>
+        <th>Due Amount</th>
+        <th>Reamrk</th>
+        <th>Submitted DAte</th>
+        <th>Update Data</th>
+        <th>Delete Data</th>
+
+    </tr>
+    @{
+        DBManager Dm = new DBManager();
+        string cmd = "select *from Tbl_Fees order by feeId";
+        
+        DataTable dt = Dm.ExecuteSelect(cmd);
+        foreach(DataRow dr in dt.Rows)
+        {
+            
+            <tr>
+            @for(int i=0;i<3;i++)
+            {
+                
+               <td>@dr[i]</td>
+            }
+                @{
+                    string cmd1 = "select *from Tbl_AddCllg where ClgId='"+dr[3]+"'";
+                    DataTable dt1 = Dm.ExecuteSelect(cmd1);
+                    foreach (DataRow dr1 in dt1.Rows) {
+                        <td>@dr1[1]</td>
+                    }
+                    
+                    } 
+                @{
+                    cmd1 = "select *from Tbl_AddTraining where TrngId='" + dr[4] + "'";
+                    dt1 = Dm.ExecuteSelect(cmd1);
+                    foreach (DataRow dr1 in dt1.Rows) {
+                        <td>@dr1[1]</td>
+                    }
+                    
+                    }            
+            @for(int i=5;i<9;i++)
+            {
+                
+               <td>@dr[i]</td>
+            }
+                <td><a href="DeleteFee?fid=@dr[0]">Delete</a></td>
+                <td><a href="UpdateFee?fid=@dr[0]">Update</a></td>
+            </tr>
+        } 
+     }
+</table>

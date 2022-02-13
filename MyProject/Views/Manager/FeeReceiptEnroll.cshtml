@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+}
+@using MyProject.Models
+@using System.Data
+@model DataTable
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FeeReceipt</title>
+    <style>
+        #outer {
+            background:url('/Content/images/bkss.png');
+            border: 2px solid black;
+            height: 500px;
+            background-size:cover;
+            width: 1000px;
+        }
+        #blu {
+            height: 500px;
+            width: 1000px;
+            background: rgba(256,256,256,.8);
+        }
+
+    </style>
+</head>
+<body>
+    @{
+        DBManager Dm = new DBManager();
+        foreach(DataRow dr in Model.Rows)
+        {
+    
+    <div id="outer">
+        <div id="blu">
+            <center><span style="text-align:center;font-family:arial;font-weight:bold;font-size:20px"><u>RECIEPT</u></span><br />
+            <span style="text-align:center;font-family:arial;font-weight:bold;font-size:20px">KAMADGIRI</span><br />
+            <span style="text-align:center;font-family:arial;font-weight:bold;font-size:20px">SOFTWARE SOLUTION (P) TLD.</span><br />
+            <span style="font-family:Arial;font-size:18px;">In front of Rain Basera, Near Tourist Bungalow, Sitapur Chitrakoot (UP)-210204<br />
+                +91-9554160736,Email:hr@mykss.in, Website: www.mykss.in
+                    </span></center>
+            <hr />
+            <div style="height:370px;width:1000px;padding:2%;font-family:arial">
+                Sl. No. : <span style="font-weight:bold;color:maroon">@dr[0]</span>
+                <span style="margin-left:600px">Date :</span><span style="font-weight:bold;color:maroon">@dr[8]</span><br /><br />
+                <span>Enrollment No :</span><span style="font-weight:bold;color:maroon">@dr[1]</span> 
+                <span style="margin-left:100px">Name : </span> <span style="font-weight:bold;color:maroon">@dr[2]</span>
+                <br /><br />
+                <span>Course : </span><span style="font-weight:bold;color:maroon">@dr[4]</span><br /><br />
+                <span>College : </span> <span style="font-weight:bold;color:maroon">@dr[3]</span><br /><br />
+                <span>Paid Amount : </span><span style="font-weight:bold;color:maroon">@dr[5]</span><br /><br />
+                <span>Due Amount : </span><span style="font-weight:bold;color:maroon">@dr[6]</span>
+                <br /><br /><br />
+                <span>Note: THe registration fee is not refundable</span>
+                <span style="margin-left:350px">KAMADGIRI SOFTWARE SOLUTION (P)LTD.</span>
+            </div>
+        </div>
+    </div>
+    }
+}
+  <input type="button" value="print fees" onclick="bttn()" />
+</body>
+    <script>
+        function bttn() {
+            window.print();
+        }
+    </script>
+</html>

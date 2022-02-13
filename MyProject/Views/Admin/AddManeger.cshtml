@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "AddManeger";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<script>
+    $(document).ready(function () {
+        $("#imgrefresh").click(function () {
+            $.getJSON("/Admin/GetNewCaptcha", null, function (data) {
+                $("#imgcaptcha").attr("src", data);
+            });
+        });
+        });
+</script>
+
+
+    @if(ViewBag.reg!=null)
+    {
+     <script>   alert('@ViewBag.reg');</script>
+    }
+
+}
+<style>
+    .form-control {
+        margin-top: 2%;
+        background-color:transparent;
+        color:black;
+    }
+    .text-center {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+</style>
+
+<div class="row regidter" style="min-height:700px;padding:40px;background-image:url(../../Content/images/e.jpg);background-attachment:fixed;background-repeat:no-repeat;background-size:auto 100%;">
+    <div class="col-sm-6">
+
+    </div>
+    <div class="col-sm-6" style="background-color:rgba(256,256,256,.8);padding:25px 20px;">
+        <h2 class="text-center">Registration</h2>
+        @using (Html.BeginForm("AddManeger", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <span>Enter Employee Identity : </span>
+            @Html.TextBox("EmpId", null, new { @class = "form-control", placeholder = "Enter Employee ID" })
+            <span>Enter Employee Name : </span>
+            @Html.TextBox("name", null, new { @class = "form-control", placeholder = "Enter YOur Name", required = "required" })
+            <span class="form-control">Gender : 
+            @Html.RadioButton("gen", "Male", new { }) Male
+            @Html.RadioButton("gen", "Female", new { })  Female
+                </span>
+            
+            <Span>Enter Email Id : </Span>
+             @Html.TextBox("email", null, new { @class = "form-control", placeholder = "Enter YOur Email", type = "email", required = "required" })
+            <span>Enter Employee Mobile Number</span>
+            @Html.TextBox("mobno", null, new { @class = "form-control", placeholder = "Enter YOur Moblie Number", type = "Number", required = "required" })
+            <span>Enter Employee Address : </span><br />
+            @Html.TextArea("texta", null, new { placeholder = "Enter YOur Address", @class = "form-control", required = "required", style = "resize:none;" })
+           <br /> <span>Upload Employee Photo : </span>
+            <input type="file" name="pic" class="form-control" />
+            <span>Enter New Password</span>
+             @Html.TextBox("pass", null, new { @class = "form-control", placeholder = "Enter YOur Password", type = "password", required = "required" })
+            <span>Confirm Password</span>
+             @Html.TextBox("cpaas", null, new { @class = "form-control", placeholder = "Enter YOur Moblie Number", type = "password", required = "required" })
+            <span>Captcha</span><br /><br />
+             <img id="imgcaptcha" src="@ViewBag.Msg" />
+            <img id="imgrefresh" src="~/Content/images/refresh.png" style="width:45px;height:45px;border-radius:25px;cursor:pointer;" title="Reload Captcha" />
+            @Html.TextBox("capt", null, new { @class = "form-control", placeholder = "Enter Captcha", required = "required" })
+            <input type="submit" value="Register Now!" class="btn btn-success" style="margin-top:2%;"/> 
+            <input type="reset" value="Reset" class="btn btn-danger" style="margin-top:2%;"/>
+        }
+    </div>
+</div>

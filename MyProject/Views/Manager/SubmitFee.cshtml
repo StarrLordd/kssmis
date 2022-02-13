@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "SubmitFee";
+    Layout = "~/Views/Shared/MZCommonLayout.cshtml";
+}
+@using MyProject.Models;
+@using System.Data;
+
+<h2>SubmitFee</h2>
+@using(Html.BeginForm("SubmitFee","Manager")){
+    @Html.TextBox("Enroll",null,new{placeholder="Enter Enrollment Id"})<br />
+    @Html.TextBox("namme",null,new{placeholder="Enter Your Name"})<br />
+    <select name="clg">
+        <option value="null"></option>
+        @{
+            string cmd = "select ClgId,ClgName from Tbl_AddCllg";
+            DBManager Dm = new DBManager();
+            DataTable b = Dm.ExecuteSelect(cmd);
+            foreach(DataRow dr in b.Rows)
+            {
+                <option value="@dr[0]">@dr[1]</option>
+            }
+         }
+    </select><br />
+    <select name="corc">
+        <option value="null">--Please Select--</option>
+        @{
+            cmd = "select TrngId,TrngName,Year from tbl_Addtraining order by trngname";
+            Dm = new DBManager();
+            b = Dm.ExecuteSelect(cmd);
+            foreach(DataRow dr in b.Rows)
+            {
+                <option value="@dr[0]">@dr[1] - @dr[2]</option>
+            }
+         }
+    </select><br />
+    @Html.TextBox("pamt",null,new{placeholder="Enter Paid Amount"})<br />
+    @Html.TextBox("damt",null,new{placeholder="Enter Due Amount"})<br />
+    @Html.TextBox("rem",null,new{placeholder="Enter Remark"})<br />
+    <input type="submit" value="Submit" /> <input type="reset" value="Reset" />
+    <span style="color:red">@ViewBag.msg</span>
+}

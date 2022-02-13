@@ -1,0 +1,155 @@
+﻿.head {
+    
+}
+.upper {
+    background-color: #191919;
+    min-height: 40px;
+     line-height: 40px;
+    color: white;
+    user-select:none;
+}
+.uleft {
+    
+    min-height: 40px;
+   font-size: 16px;
+}
+.cc {
+    color: white;
+    transition:all ease 2s;
+    border:1px solid white;
+    height:25px;
+    text-align:center;
+    padding-top:.7%;
+    width:25px;
+    margin-left:2%;
+}
+    .cc:hover {
+        transform: rotate(45deg);
+        transition:all ease 2s;
+    }
+.bac {
+    color: white;
+    font-size: 14px;
+    background-color: #1896d1;
+    margin-left:20%;
+    padding: .5%;
+    border-radius:5px;
+}
+.navv {
+    min-height:40px;
+    line-height:50px;
+}
+#menu1{
+                
+     color:#b1040e;
+     background:transparent;
+     border:none;
+     box-shadow:none;
+     margin:0px auto;
+     padding:0px;
+     margin-top:0%;
+     font-size:18px;
+}
+#menu1 ul li a{
+      color:black;
+}
+.site {
+    background: maroon;
+    min-height: 500px;
+}
+.ufooter {
+    background-color: #6451ce;
+    min-height: 60px;
+}
+.ss {
+    line-height: 60px;
+    font-size: 20px;
+}
+.sp {
+    line-height: 60px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+.sp1 {
+    text-align: center;
+    color: white;
+    margin-left:10%;  
+}
+.mfoot {
+    min-height: 250px;
+    background-color: #1c2331;
+}
+.foot {
+    color: #d2d2d2;
+}
+.lfoot {
+    min-height: 50px;
+    background: #161c27;
+}
+.noti {
+    min-height: 30px;
+    color:white;
+    
+}
+.fad {
+    animation:blink 2s linear infinite;
+}
+@keyframes blink{
+    0%{ opacity:1;
+}
+50% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+
+
+.animated {
+  animation-duration: 1.5s;
+  animation-delay: 1s;
+}
+.fe {
+    height: 40px;
+    background: white;
+    font-size: 18px;
+    margin-top:2%;
+}
+    .hee {
+        font-size: 35px;
+        font-weight: bolder;
+        text-align: center;
+        color: white;
+    }
+    .pp {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom:10%;
+        color: white;
+    }
+    .scrollto {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    color: #fff;
+    background: #1896d2;
+    }
+    .card {
+        min-height: 530px;
+        box-shadow:0px 0px 3px black;
+        margin-top:8%;
+    }
+    
+.con {
+    
+    min-height: 500px;
+    background-attachment:fixed;
+}

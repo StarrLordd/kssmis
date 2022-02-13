@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "PettyIncomeEx";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@using MyProject.Models
+@using System.Data
+
+<h2 style="text-align:center;">Petty Expence Income Manegment</h2>
+<center><table border="1" cellpadding="10px">
+    <tr>
+        <th>Sr. No.</th>
+        <th>Pupose</th>
+        <th>Expence Amount</th>
+        <th>Remark</th>
+        <th>Empance Date</th>
+        <th>Update</th>
+        <th>Delete</th>
+
+    </tr>
+    @{
+        DBManager Dm = new DBManager();
+        string cmd = "select *from Tbl_Petty order by PettyId desc";
+        int i = 1;
+        DataTable dt = Dm.ExecuteSelect(cmd);
+        foreach(DataRow dr in dt.Rows)
+        {
+            <tr>
+            <td>@i</td>
+            <td>@dr[1]</td>
+            <td>@dr[2]</td>
+            <td>@dr[3]</td>
+            <td>@dr[4]</td>
+                            <td><a href="DeleteFee?fid=@dr[0]">Delete</a></td>
+                <td><a href="UpdateFee?fid=@dr[0]">Update</a></td>
+                </tr>
+            i++;
+        }    
+     }
+</table>
+    </center>

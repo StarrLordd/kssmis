@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "ManegMan";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@using MyProject.Models
+@using System.Data
+<div class="row" style="background-color:pink;min-height:600px;">
+    <div class="col-sm-12" style="padding:20px;">
+        <h2 class="text-center">Tranee Record Maneger</h2>
+        <hr />
+        <table border="1" style="background-color:pink;min-height:600px;">
+            <tr>
+                <th colspan="4" class="text-center">User Details</th>
+                <th>Delete</th>
+        @{
+            string cmd = "select *from Tbl_AddManager order by EmpId";
+            DBManager Dm = new DBManager();
+            DataTable dt = Dm.ExecuteSelect(cmd);
+            foreach(DataRow dr in dt.Rows)
+            {
+                <tr style="border-bottom:2px solid blue;margin-bottom:5px">
+                    <td colspan="4">
+                        <table style="width:100%" border="1">
+                            <tr>
+                                <td>
+                                    <img src="../Content/UserPics/@dr["EmpPic"]" style="width:70px;height:70px;border-radius:10px;margin:5px" />
+                                </td>
+                                <td>
+                                    <span>Employee Id :</span>@dr[0]
+                                </td>
+                                <td>
+                                    <span>Employee NAme :</span>@dr[1]
+                                </td>
+                                <td>
+                                    <span>Employee Gender :</span>@dr[2]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Employee EmailId :</span>@dr[3]
+                                </td>
+                                <td>
+                                    <span>Employee Contact No :</span>@dr[4]
+                                </td>
+                                <td>
+                                    <span>Employee Address :</span>@dr[5]
+                                </td>
+                                <td>
+                                    <span>Registration Date :</span>@dr[7]
+                                </td>
+                            </tr>
+                            
+                        </table>
+                    </td> 
+                    <td><a href="deleteReg?uid=@dr[0]">Delete Record</a></td>
+                   </tr>
+            }   
+                   
+            
+         } </tr>
+                    </table>
+    </div>
+</div>
+@if(TempData["msg"]!=null)
+{
+    <script>alert('@TempData["msg"]');</script>
+}

@@ -1,0 +1,23 @@
+﻿
+
+@{
+    ViewBag.Title = "PettyEx";
+    Layout = "~/Views/Shared/MZCommonLayout.cshtml";
+}
+
+<h2>Petty Expence</h2>
+@using (Html.BeginForm("PettyEx"))
+{
+    <select name="sel">
+        <option value="null">--Select Expence--</option>
+        <option>Room Freshner</option>
+        <option>MEchanical Issu</option>
+        <option>Billing</option>
+        <option>Feshener</option>
+    </select>
+    <br />
+    @Html.TextBox("amt", null, new { placeholder="Enter Amount of Expence"})<br />
+    @Html.TextBox("rem", null, new { placeholder="Enter Remark"})<br /><br />
+    <input type="submit" value="Submit" />
+    <span style="color:red;">@ViewBag.msg</span>
+}

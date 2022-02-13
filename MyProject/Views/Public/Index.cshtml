@@ -1,0 +1,379 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/PZCommon.cshtml";
+}
+<script src="~/Content/js/validation.js"></script>
+<base href="../../Content/images/"/>
+<style>
+    .f {
+    height: 60px;
+    background: white;
+    font-size: 20px;
+}
+.st {
+    color: white;
+    font-size: 35px;
+    padding-top: 30%;
+}
+#bttn {
+    position: fixed;
+    right: 20px;
+    bottom:10px;
+    min-height: 65px;
+    width: 65px;
+    background: #34495e;
+    border-radius: 50% 0% 50% 50%;
+    box-shadow: 3px 3px 10px black;
+    cursor: pointer;
+    z-index:1;
+}
+.logoo {
+        height: 80px;
+        width: 80px;
+        background:#148ac2;
+        border: 3px solid white;
+        text-align:center;
+        position: relative;
+        margin-top: -10%;
+        border-radius: 45px;
+        margin-left: 38%;
+        color:white;
+        transition:all ease 1.5s;
+    }
+    .logoo:hover {
+        background: white;
+        color: #148ac2;
+        transition: all ease 1.5s;
+    }
+    .lo {
+        font-size: 30px;
+        line-height:80px;
+    }
+    .ii
+          {
+              width:100%;
+          }
+         
+          .bb
+          {
+              overflow: hidden;
+              background:white;
+              text-align:justify;
+          }
+         .bb img:hover
+         {
+             transform:scale(1.03);
+             transition: all ease 1s;
+         }
+         .bb img
+         {
+             transition: all ease 1s;
+         }
+</style>
+@using MyProject.Models
+@model IEnumerable<Notification>
+<br />
+<div class="row">
+<div class="col-sm-12 noti" style="background:none;">
+    <div class="col-sm-2 " style="background:#1896d1;font-weight:bold;font-size:20px;"><span class="fad">KSS  Updates :-</span> </div>
+    <div class="col-sm-10" style="background:white;color:#1896d1;line-height:35px;">
+       <marquee> @{
+           foreach(Notification no in Model)
+           {
+               @no.noti<sup><img src="~/Content/images/a.gif" height="15"/></sup> <span> | </span>
+           }
+        }</marquee></div>
+</div>
+</div>
+    <div class="row">
+        <div class="col-sm-12 slide">
+            <div class="row">
+              
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="7"></li>
+
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active" style="min-height:650px;background-image: url('banner1.jpg');">
+      <div class="row" style="min-height:650px;background:rgba(0,0,0,.5)">
+        	<p class="animated fadeInDown" style="top:0; position:relative; z-index:-1; text-align: center;"><img src="banner-1-img1.png" alt="" class="img-fluid" ></p>
+            <p class="animated fadeInLeft" style="left:0; bottom:0; position:absolute; z-index:-1;"><img src="banner-1-img2.png" alt="" style="max-width: 70%;"></p>
+            <p class="animated fadeInRight" style="right:0; bottom:0; position:absolute; z-index:-1;"><img src="banner-1-img3.png" alt="" style="max-width: 70%; float: right;"></p>
+        <div class="carousel-caption">
+          <h2 class="animated fadeInDown hee">Welcome to the world of technology</h2>
+                <p class="animated fadeInDown pp">Welcome to KSS, Behind starting of KSS we have a mission - 
+                    <strong>"To Digitize India from its rural area"</strong>. We want to create software in very
+                     low cost for our clients.</p>
+                <a href="#" class="btn-get-started scrollto animated fadeInDown animated fadeInDown" data-toggle="modal" data-target="#mmdl" >Request a Consult</a>
+
+              </div>
+      </div>
+   </div>
+    
+
+      
+       <div class="item" style="min-height:650px;background-image: url('banner5.jpg');">
+      <div class="row" style="min-height:650px;background:rgba(0,0,0,.5)">
+        	<p class="animated fadeInDown" style="top:0; position:relative; z-index:-1; text-align: center;"><img src="banner-5-img2.png" alt="" class="img-fluid" ></p>
+            <p class="animated fadeInLeft" style="left:0; bottom:0; position:absolute; z-index:-1;"><img src="banner-5-img3.png" alt="" style="max-width: 70%;"></p>
+            <p class="animated fadeInRight" style="right:0; bottom:0; position:absolute; z-index:-1;"><img src="banner-5-img1.png" alt="" style="max-width: 70%; float: right;"></p>
+        <div class="carousel-caption">
+          <h2 class="animated fadeInDown hee">KSS- A concept of Super-100</h2>
+                <p class="animated fadeInDown pp">KSS is started with passion of programming. Our founder director has dedicated his whole
+                     career in computer programming. Now he is going to create a brilliant team of Super-100 programmers, who will be abl
+                    e to develope any kind of computer software.</p>
+                <a href="#" class="btn-get-started scrollto animated fadeInDown" data-toggle="modal" data-target="#mmdl">Request a Consult</a>
+              </div>
+      </div>
+   </div>
+      
+
+        <div class="item" style="min-height:650px;background-image: url('banner8.jpg');">
+           <div class="row" style="min-height:650px;background:rgba(0,0,0,.5)">
+               <p class="animated fadeInLeft" style="left:0; top:0; position:absolute; z-index:-1;"><img src="job-enable-img1.png" alt="" style="max-width: 70%;"></p>
+             <p class="animated fadeInRight" style="right:0; top:0; position:absolute; z-index:-1;"><img src="job-enable-img2.png" alt="" style="max-width: 70%; float: right;"></p>
+            
+                <div class="carousel-caption">
+                <h2 class="animated fadeInDown hee">Expertise on multiple technologies</h2>
+                <p class="animated fadeInDown pp">We are not trainer; we are consultant from IT- Industry, so real-time demand of Industry
+                     is well known by us. Our volcanous team is capable to develop anykind of
+                     software in any latest technology.We provides training in latest technologies as per the demand of industry.</p>
+               <a href="#" class="btn-get-started scrollto animated fadeInDown animated fadeInDown" data-toggle="modal" data-target="#mmdl" >Request a Consult</a>
+            </div>
+         </div>
+       </div>
+
+      <div class="item" style="min-height:650px;background-image: url('banner3.jpg');">
+           <div class="row" style="min-height:650px;background:rgba(0,0,0,.5)">
+              <p class="animated fadeInDown" style="top:0; position:relative; z-index:0; text-align: center;"><img src="banner-3-img2.png" alt="" style="max-width: 50%; opacity: .9;"></p>
+             <p class="animated fadeInLeft" style="left:0; top:10%; position:absolute; z-index:-1;"><img src="banner-3-img3.png" alt="" style="max-width: 70%;"></p>
+         	 <p class="animated fadeInRight" style="right:0; bottom:0; position:absolute; z-index:-1;"><img src="banner-3-img1.png" alt="" style="max-width: 70%; float: right;"></p>
+             
+               <div class="carousel-caption">
+                <h2 class="animated fadeInDown hee">KSS- Gateway to Career</h2>
+                <p class="animated fadeInDown pp">If you want to make your good career, then join KSS. </strong> <br />KSS is a 
+                    bridge for students of Computer Science to get a good job and make their career
+                    .We have experience of both-Software development and training. So we know demand of industry very well.</p>
+                 <a class="btn-get-started scrollto animated fadeInDown animated fadeInDown" href="#">Register Now</a>  
+            </div>
+         </div>
+       </div>
+
+
+         <div class="item" style="min-height:650px;background-image: url('banner6.jpg');">
+           <div class="row" style="min-height:650px;background:rgba(0,0,0,.5)">
+              <p class="animated fadeInLeft" style="left:0; top:10%; position:absolute; z-index:-1;"><img src="banner-6-img1.png" alt="" style="max-width: 70%;"></p>
+              <p class="animated fadeInRight" style="right:0; top:0; position:absolute; z-index:-1;"><img src="banner-6-img2.png" alt="" style="max-width: 70%; float: right;"></p>
+ 
+               <div class="carousel-caption">
+                <h2 class="animated fadeInDown hee">4/6 Weeks Summer Training</h2>
+                <p class="animated fadeInDown pp">For B.Tech (CS/IT) / Diploma(CS/IT) / BCA / MCA</strong><br />Our founder director has
+                     lot of experience in Training & Placement so we are going to provide genuine training
+                     and placement for rural and urban area students. So that poor students can also afford good training and job.</p>
+                 <a class="btn-get-started scrollto animated fadeInDown animated fadeInDown" href="#">Register Now</a>
+            </div>
+         </div>
+       </div>   
+
+		  
+      <div class="item" style="min-height:650px;background-image: url('banner7.jpg');">
+           <div class="row" style="min-height:650px;background:rgba(0,0,0,.5)">
+             <p class="animated fadeInLeft" style="left:0; top:0; position:absolute; z-index:-1;"><img src="banner-7-img1.png" alt="" style="max-width: 70%;"></p>
+                <div class="carousel-caption">
+                <h2 class="animated fadeInDown hee">6/7 Months Apprenticeship Training</h2>
+                <p class="animated fadeInDown pp"><strong>For Pass-out and selected students of B.Tech (CS/IT) / Diploma(CS/IT) / BCA /
+                     MCA</strong><br />We offers Apprenticeship training as per the demand of IT -Industry. Our Apprenticeship training 
+                    program is live project based with best technology and personality development classes. All lectures of apprenticeship 
+                    program will be taken by experts from Multi-national companies. We promise 100% job assistance to all students of
+                     Apprenticeship.</p>
+                 <a class="btn-get-started scrollto animated fadeInDown animated fadeInDown" href="#">Register Now</a>
+            </div>
+         </div>
+       </div>
+
+      <div class="item" style="min-height:650px;background-image: url('banner4.jpg');">
+           <div class="row" style="min-height:650px;background:rgba(0,0,0,.5)">
+             <p class="animated fadeInLeft" style="left:0; top:0; position:absolute; z-index:-1;"><img src="banner-4-img2.png" alt="" style="max-width: 60%;"></p>
+         	<p class="animated fadeInRight" style="right:0; bottom:0; position:absolute; z-index:-1;"><img src="banner-4-img1.png" alt="" style="max-width: 70%; float: right;"></p>
+             <div class="carousel-caption">
+                <h2 class="animated fadeInDown hee">KSS- Gateway to Career</h2>
+                <p class="animated fadeInDown pp"><strong>If you want to make your good career, then join KSS. </strong> <br />KSS is a
+                     bridge for students of Computer Science to get a good job and make their career.We have experience of both-Software 
+                    development and training. So we know demand of industry very well. From KSS side we promise that - We will run our
+                     company with honesty and hard work. We will never cheat any client or student that will be associated with us.</p>
+                <a class="btn-get-started scrollto animated fadeInDown animated fadeInDown" href="#">Register Now</a>
+            </div>
+         </div>
+       </div>
+
+      <div class="item" style="background:url('banner2.jpg');min-height:650px;">
+      <div style="width:100%;height:650px;background:rgba(0,0,0,.5);">
+        <p class="animated fadeInDown" style="top:0; position:relative; z-index:-1;"><img src="banner-2-img.png" alt="" class="img-fluid"></p>
+            <div class="carousel-caption">
+        <h2 style="font-weight:bold;margin-bottom:5%;" class="animated fadeInDown" style="z-index:1;">Where there is no Vision, there is no hope.</h2>
+           <p style="z-index:1;margin-bottom:10%;" class="animated fadeInDown">Our Vision is to help our clients meet their goals through our people, services and solutions. We want to be a global leader in providing the highest level of IT solutions and services. We strive to exceed our client’s expectations and create a workplace in which all employees thrive in a collaborative environment that celebrates excellence. We want to "Digital India" dream came to true.</p>
+          <a href="#" class="btn-get-started scrollto animated fadeInDown" data-toggle="modal" data-target="#mmdl">Request a Consult</a>
+            
+    </div> 
+      
+          </div>
+</div>
+
+
+   
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+</div></div>
+<div class="row">
+<div class="col-sm-12" style="background-image:url(/Content/images/about-bg.jpg);background-size:cover;background-attachment:fixed;">
+   <div class="row">
+     <div class="col-sm-12" style="background:rgba(256,256,256,.95);min-height:100%;">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10"><br /><br /><br />
+            <p style="font-weight:bold;font-size:30px;text-align:center;font-family:Arial;">ABOUT <span style="color:#1896d1;">KSS</span></p>
+            <span style="font-size:initial;font-stretch:initial;" class="text-center">
+
+                Kamadgiri Software Solutions (KSS) is a next-generation global technology company that helps enterprises reimagine their businesses for the digital age. KSS is started by two young professionals. Er. S Mishra, An expert from IT Industry, and Er. Shubham Mishra, B. Tech in Information Technology from Mahatma Gandhi University.
+<br /><br />
+KSS is an IT company incorporated with Ministry of Corporate Affairs -Government of India; to facilitate software development and IT training in India. We work for domestic as well as international clients. We offer an integrated portfolio of products, solutions, services, and IP through our Mode 1-2-3-4 strategy built around Digital, IoT, Cloud, Automation, Cybersecurity, Analytics, Infrastructure Management and Engineering Services, amongst others, to help enterprises reimagine their businesses for the digital age.
+
+            </span>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+         <br /><br /><br />
+    <div class="col-sm-4">
+        <div class="col-sm-12 card mission bb">
+           <div class="row">
+               <img src="~/Content/images/ourmission-1-16.jpg" class="img-responsive ii"/>
+              
+           <div class="logoo"><span class="fa fa-tachometer lo"></span></div>
+              <p style="text-align:center;font-size:25px;font-weight:bold;margin-top:1%;">OUR <span style="color:#1896d1;">MISSION</span></p>
+       <div class="col-sm-12">
+                    <span style="padding:2%;font-size:16px;">
+                   Behind starting of KSS we have a mission - "To Digitize India from its rural area". We want to create software in very
+                         low cost for our clients. Our founder director has lot of experience in Training & Placement so we are going to provide
+                         genuine training and placement for rural and urban area students. So that poor students can also afford good training and job.
+                </span>
+                </div>
+
+                </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="col-sm-12 card vission bb">
+            <div class="row">
+          
+              <img src="~/Content/images/Mission.jpg" class="img-responsive ii" />
+           <div class="logoo"><span class="fa fa-eye lo"></span></div>
+              <p style="text-align:center;font-size:25px;font-weight:bold;margin-top:1%;">OUR <span style="color:#1896d1;">VISSION</span></p>
+                <div class="col-sm-12">
+                    <span style="padding:2%;font-size:16px;">
+                    Our Vision is to help our clients meet their goals through our people, services and solutions. We want to be a global
+                     leader in providing the highest level of IT solutions and services. We strive to exceed our client’s expectations
+                     and create a workplace in which all employees thrive in a collaborative environment that celebrates excellence. We want
+                     to "Digital India" dream came to true.
+                </span>
+                </div>
+        </div>
+          
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="col-sm-12 card promiss bb">
+            <div class="row">
+                <img src="~/Content/images/our-purpose.jpg" class="img-responsive ii"/>
+           <div class="logoo"><span class="fa fa-tachometer lo"></span></div>
+              <p style="text-align:center;font-size:25px;font-weight:bold;margin-top:1%;">OUR <span style="color:#1896d1;">MISSION</span></p>
+       <div class="col-sm-12">
+                    <span style="padding:2%;font-size:16px;">
+                    From KSS side we promise that - We will run our company with honesty and hard work. We will never cheat any client or
+                         student that will be associated with us. We take oath that with-in next 3 years we will be one of the most reliable
+                         IT Company in software and training division. Customer satisfaction is most important thing for us. We will provide
+                         best quality and customer support.
+                </span>
+                </div>
+
+                 </div>
+
+        </div>
+    </div>
+</div></div></div></div>
+
+<div class="col-sm-1" data-toggle="modal" data-target="#mmdl" id="bttn"><span class="fa fa fa-comments st"></span></div>
+
+<!---------Modals--------------->
+
+
+<div class="modal fade mod" id="mmdl">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background:#1896d1;color:white;font-size: 30px;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p class="modal-title text-center" style="font-weight:bold;">ENQUIRY</p>
+      </div>
+      <div class="modal-body bd">
+       <p class="text-center" style="font-size:20px;">Welcome! Let's start your dream to achive with us.</p>
+      <div class="col-sm-12 reg">
+          
+             
+                   
+                           @Html.TextBox("name",null,new{placeholder="Enter Your Name...", onblur="nam()", @class="form-control fe", id="txt"}) <span id="spname" class="sssp" style="color:red"></span>
+                           @Html.TextBox("email",null,new{placeholder="Enter Your Email...", onblur="emvali()", type="Email", @class="form-control fe", id="email"}) <span class="sssp" id="spmail" style="color:red"></span>
+                           @Html.TextBox("num",null,new{placeholder="Enter Your Nummber...", onblur="mobb()", type="number", @class="form-control fe", id="num"}) <span id="spmob" class="sssp" style="color:red"></span>
+                           @Html.TextArea("texta",null,new{placeholder="Enter Your Message...", onblur="mssgs()", @class="form-control fe", id="mssg"})<span id="spmsg" style="color:red"></span>
+                     <input type="button" id="btn"   style="background:#18bb9c;color:white;margin-top:2%;" value="Submit Query" class="form-control"/>
+                    <script>
+                       
+
+                      
+                        //Ajax here....
+                        $(document).ready(function () {
+                            $("#btn").click(function () {
+                                var name, em, mob, msg;
+                                name = $("#txt").val();
+                                em = $("#email").val();
+                                mob = $("#num").val();
+                                msg = $("#mssg").val();
+                                var ob = { uname: name, email: em, num: mob, mssg: msg };
+                                $.getJSON("/Public/saveEnq", ob, function (res) {
+                                    alert(res);
+                                });
+                            });
+                        });
+                    </script>
+      </div>
+      </div>
+        <br/>
+      <div class="modal-footer">
+        
+                    
+      </div>
+                     }
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+        

@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "TraineeRecords";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Training Management</h2>
+@using(Html.BeginForm("TraineeRecords")){
+    @Html.TextBox("name", null, new { placeholder="Enter Trainee Name"})<br />
+    <select name="yr">
+        <option value="null">--Select Year--</option>
+        <option>2015</option>
+        <option>2016</option>
+        <option>2017</option>
+        <option>2018</option>
+        <option>2019</option>
+        <option>2020</option>
+        <option>2021</option>
+        <option>2022</option>
+        <option>2023</option>
+        <option>2024</option>
+    </select><br />
+    @Html.TextBox("tfees", null, new { placeholder="Enter Total Fees"})<br />
+    @Html.TextBox("rfees", null, new { placeholder="Enter Registration Fees"})<br />
+    <input type="submit" value="Save" />
+}
+<span style="color:green;font-size:20px">@ViewBag.res</span>

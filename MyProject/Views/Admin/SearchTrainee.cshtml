@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "SearchTrainee";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@using MyProject.Models
+@using System.Data
+@model DataTable
+<h2 style="text-align:center">Search Trainee Details</h2>
+
+    <div class="col-sm-3"></div>
+    @using (Html.BeginForm("SearchTrainee", "Admin"))
+    {
+    <div class="col-sm-6">
+        
+                @Html.TextBox("name", null, new { placeholder="Enter Enrollment No/Name....", rquired="required", @class="form-control"})
+            
+            <input type="submit" value="Search Profile" class="form-control"/>
+       
+    </div>
+    }
+    <div class="col-sm-3"></div>
+
+
+
+    @{
+        if(Model!=null)
+        {
+           foreach(DataRow dr in Model.Rows)
+           {
+              <div class="col-sm-3" style="margin-top:2%;">
+         
+          <div class="col-sm-12"  style="min-height:350px;background:rgba(0,0,0,.5);text-align:center;box-shadow:2px 2px 10px black">
+               <div class="col-sm-12">Enrollment No : <span style="font-weight:bold">@dr[0]</span></div>
+              <div style="height:200px;"><img src="/Content/UserPics/@dr[5]" height="200" width="200" /></div>
+        <span style="font-weight:bold">@dr[2]</span><br /><br />
+        
+        <a class="btn" href="ViewProfile?tid=@dr[0]">View Profile</a>
+
+              <a class="btn" href="DeleteTrainee?trid=@dr[0]">Delete Account</a>
+          </div></div>
+           }
+        }
+     }
+

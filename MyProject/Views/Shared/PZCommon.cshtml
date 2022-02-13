@@ -1,0 +1,198 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PZCommon</title>
+    <link href="~/Content/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/animate.css" rel="stylesheet" />
+    <link href="~/Content/css/common.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/css/hover.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+
+    <script src="~/Content/js/jquery.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+  
+    <script>
+
+        //Validation start here......
+
+
+       
+
+
+
+        //Animation system here.......
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                var scrollamount = $(window).scrollTop();
+                console.log(scrollamount);
+                if (scrollamount >= 50) {
+                    $(".navv").addClass("navbar-fixed-top");
+                    $('.navv').css("background", "rgba(28,35,49,.8)");
+                    $('.ne').css("color", "white");
+                }
+                else {
+                    $(".navv").removeClass("navbar-fixed-top");
+                    $('.navv').css("background", "transparent");
+                    $('.ne').css("color", "black");
+                }
+                if (scrollamount > 400 && scrollamount < 1280) {
+                    $(".card").addClass("animated fadeInUp");
+                }
+                else {
+                    $(".card").removeClass("animated fadeInUp");
+                }
+
+            });
+            
+        });
+    </script>
+    <style>        .ne {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    @*----Header----*@
+
+    <div class="col-sm-12 head">
+        <div class="row">
+   <div class="col-sm-12 upper  ">
+       <div class="col-sm-4 uleft">
+           <span class="cc fa fa-envelope"></span> <span style="font-size:16px;color:#8e8e8e;">Amittripathi2233@gmail.com</span>
+           <span class="cc fa fa-mobile" style="font-size:20px;"></span> <span style="font-size:16px;color:#8e8e8e;">+91-8887975604</span>
+       </div>
+       <div class="col-sm-2"></div>
+       <div class="col-sm-6">
+           <span class="bac">A company founded by Technocrat from IT-Industry</span> 
+
+          
+           <a class="ic" href="https://www.facebook.com" target="_blank"><span class="cc fa fa-facebook"></span></a> 
+           <a class="ic" href="https://www.twiter.com" target="_blank"><span class="cc fa fa-twitter"></span></a> 
+           <a class="ic" href="#"><span class="cc fa fa-whatsapp"></span></a> 
+           <a class="ic" href="#"><span class="cc fa fa-instagram "></span></a>
+       </div>
+   </div>
+    <div class="col-sm-12 navv">
+        <div class="col-sm-3 logo">
+            <img src="~/Content/images/ksss.png"  class="img-responsive" height="50" width="150"/>
+        </div>
+        <div class="col-sm-9 menu">
+        @*-----Nav Bar----*@
+
+          <div class="col-sm-12">
+
+               <nav class="navbar navbar-default" id="menu1">
+                                <div class="container-fluid" style="margin-top:1%;">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button style="color:white;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+       
+        <li class="hvr hvr-underline-from-center">@Html.ActionLink("Home", "Index", null, new {@class="ne" })</li>
+        <li class="hvr hvr-underline-from-center">@Html.ActionLink("About KSS MIS","About", null, new {@class="ne" })</li>
+        <li class="hvr hvr-underline-from-center">@Html.ActionLink("Contact Us","ContactUs", null, new {@class="ne" })</li>
+        <li class="hvr hvr-underline-from-center">@Html.ActionLink("Log In","LogIn", null, new {@class="ne" })</li>
+          <li class="hvr hvr-underline-from-center">@Html.ActionLink("Your Review","Review", null, new {@class="ne" })</li>
+        
+        
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+          </div>
+            
+        @*------Nav Bar Ended-------*@
+        </div></div>
+    </div></div>
+    <div class="col-sm-12">
+       @RenderBody()
+    </div>
+    <!-- Footer -->
+       
+            <div class="col-sm-12 ufooter">
+                <div class="col-sm-5">
+                    <span class="sp">Get connected with us on social networks!</span>
+                </div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-3 ss">
+                   <a href="https://www.facebook.com/Amit.roqs" target="_blank"> <span class="sp1 fa fa-facebook"></span></a>
+                    <span class="sp1 fa fa-twitter"></span>
+                    <span class="sp1 fa fa-google-plus"></span>
+                    <span class="sp1 fa fa-linkedin "></span>
+                    <span class="sp1 fa fa-instagram"></span>
+                </div>
+            </div>
+            <div class="col-sm-12 mfoot">
+                <div class="col-sm-3 foot">
+                    <br />
+                    <span style="font-weight:bold;font-size:20px;">KSS (P) Ltd.</span>
+                    <hr style="width: 60px;margin-left:0px;margin-top:0px;border-color:#6451ce;">
+                    <br />
+                    <p style="font-size:17px" class="text-justify">KSS (Kamadgiri Software Solutions) is a next-generation global technology company that helps enterprises reimagine their businesses for the digital age</p>
+
+                </div>
+                <div class="col-sm-3 foot">
+                     <br />
+                    <span style="font-weight:bold;font-size:20px;">PROJECTS</span>
+                    <hr style="width: 60px;margin-left:0px;margin-top:0px;border-color:#6451ce;">
+                    <br />
+                    <p  style="font-size:16px;text-decoration:underline;cursor:pointer;">SADGURU NETRA CHIKITSALAYA</p>
+                     <p  style="font-size:16px;text-decoration:underline;cursor:pointer;">ONLINE EXAMINATION</p>
+                     <p  style="font-size:16px;text-decoration:underline;cursor:pointer;">UINVERSAL COMPUTER INSTITUTE</p>
+                     <p  style="font-size:16px;text-decoration:underline;cursor:pointer;">HOME TUTER </p>
+                </div>
+                <div class="col-sm-3 foot">
+                     <br />
+                    <span style="font-weight:bold;font-size:20px;">USEFULL &nbsp; LINKS</span>
+                    <hr style="width: 60px;margin-left:0px;margin-top:0px;border-color:#6451ce;">
+                    <br />
+                    <p  style="font-size:16px"><a style="text-decoration:none;color:#d2d2d2;" href="http://mykss.in/">KSS - Official Website</a></p>
+                    <p  style="font-size:16px"><a style="text-decoration:none;color:#d2d2d2;" href="http://mykss.in/KSS/Register">Steps To Join KSS</a></p>
+                    <p style="font-size:17px"><a style="text-decoration:none;color:#d2d2d2;" href="http://mykss.in/KSS/Career">Career at KSS</a></p>
+                     <p  style="font-size:16px"><a style="text-decoration:none;color:#d2d2d2;" href="http://bteup.ac.in/webapp/default.aspx">BTEUP</a></p>
+                     
+                </div>
+                <div class="col-sm-3 foot">
+                     <br />
+                    <span style="font-weight:bold;font-size:20px;">KSS (P) Ltd.</span>
+                    <hr style="width: 60px;margin-left:0px;margin-top:0px;border-color:#6451ce;">
+                    <br />
+                    <p style="font-size:16px" class="text-justify">Kamadgiri Software Solutions<br />
+                       In front of Rain Basera<br />
+                        Near Tourist Bungalow, Sitapur <br />
+                        Chitrakoot (UP)- 210204<br />
+                        Phone: +917651964476, +919713161487<br />
+                        Email: hr@mykss.in</p>
+
+                </div>
+            </div>
+            <div class="col-sm-12 lfoot">
+                <p style="color:#ababab;line-height:50px;font-size:16px;" class="text-center">Copyright &copy; All Right Reserved</p>
+            </div>
+       
+        
+           
+<!-- Footer -->
+</body>
+</html>

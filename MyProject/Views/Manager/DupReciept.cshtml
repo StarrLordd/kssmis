@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "DupReciept";
+    Layout = "~/Views/Shared/MZCommonLayout.cshtml";
+}
+
+<h1 style="text-align:center;text-decoration:underline">Enter Enrollment No.</h1>
+<center>
+    @using (Html.BeginForm("DupReciept","Manager"))
+    {
+        @Html.TextBox("s", null, new { placeholder="Enter Enrollment Number...", @class="form-control", style="width:25%"})<br />
+        <input type="submit" value="Generate Fee Receipt" class="form-control" style="width:25%" />
+    }
+</center>
